@@ -1,38 +1,26 @@
-(function () {
-	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "pooplog.json", true);
-	xhr.onreadystatechange = function () {
-		if (this.readyState !== (this.DONE || 4)) {
-			return;
-		}
+var poops = [{"date":"2012-02-01T20:33:22.445Z","start":1328128402445,"end":1328128889870,"duration":487424},{"date":"2012-02-03T19:35:08.100Z","start":1328297708100,"end":1328298293272,"duration":585172},{"date":"2012-02-06T19:36:26.781Z","start":1328556986781,"end":1328558118468,"duration":1131687},{"date":"2012-02-08T20:39:50.354Z","start":1328733590354,"end":1328734893725,"duration":1303371},{"date":"2012-02-10T22:21:08.346Z","start":1328912468346,"end":1328912867047,"duration":398701},{"date":"2012-02-13T00:09:26.244Z","start":1329091766244,"end":1329092499144,"duration":732900},{"date":"2012-02-16T00:56:15.214Z","start":1329353775214,"end":1329354109985,"duration":334771},{"date":"2012-02-17T19:34:25.108Z","start":1329507265108,"end":1329507490510,"duration":225402},{"date":"2012-02-20T08:49:36.709Z","start":1329727776709,"end":1329728689007,"duration":912298},{"date":"2012-02-22T19:38:03.386Z","start":1329939483386,"end":1329940377545,"duration":894159},{"date":"2012-02-24T21:07:40.537Z","start":1330117660537,"end":1330117898042,"duration":237505},{"date":"2012-02-27T19:33:50.311Z","start":1330371230311,"end":1330371729382,"duration":499071},{"date":"2012-03-01T19:34:52.272Z","start":1330630492272,"end":1330631254163,"duration":761891},{"date":"2012-03-03T19:03:03.654Z","start":1330801383654,"end":1330801739364,"duration":355710},{"date":"2012-03-05T19:34:02.223Z","start":1330976042223,"end":1330977000828,"duration":958605},{"date":"2012-03-09T19:35:47.727Z","start":1331321747727,"end":1331322379913,"duration":632186},{"date":"2012-03-09T22:40:29.012Z","start":1331332829012,"end":1331333753261,"duration":924249},{"date":"2012-03-15T19:05:59.684Z","start":1331838359684,"end":1331839329758,"duration":970074},{"date":"2012-03-17T16:26:31.917Z","start":1332001591917,"end":1332002473635,"duration":881718},{"date":"2012-03-20T19:28:09.927Z","start":1332271689927,"end":1332271971188,"duration":281261},{"date":"2012-03-21T22:11:40.574Z","start":1332367900574,"end":1332368188129,"duration":287555},{"date":"2012-03-23T18:32:41.042Z","start":1332527561042,"end":1332528103411,"duration":542369},{"date":"2012-03-26T21:46:52.444Z","start":1332798412444,"end":1332800068431,"duration":1655987},{"date":"2012-04-01T18:36:43.342Z","start":1333305403342,"end":1333305882234,"duration":478892},{"date":"2012-04-03T23:29:45.569Z","start":1333495785569,"end":1333496074287,"duration":288718},{"date":"2012-04-05T19:43:12.396Z","start":1333654992396,"end":1333655242562,"duration":250166},{"date":"2012-04-08T21:27:35.513Z","start":1333920455513,"end":1333920753003,"duration":297490},{"date":"2012-04-11T19:37:04.400Z","start":1334173024400,"end":1334173265870,"duration":241470},{"date":"2012-04-13T18:33:07.267Z","start":1334341987267,"end":1334342458658,"duration":471391},{"date":"2012-04-15T14:22:54.655Z","start":1334499774655,"end":1334500690932,"duration":916277},{"date":"2012-04-19T23:29:30.651Z","start":1334878170651,"end":1334879102618,"duration":931967},{"date":"2012-04-23T18:33:48.588Z","start":1335206028588,"end":1335206858727,"duration":830139},{"date":"2012-04-24T19:12:48.818Z","start":1335294768818,"end":1335295613064,"duration":844246},{"date":"2012-04-27T00:24:29.928Z","start":1335486269928,"end":1335486524467,"duration":254539},{"date":"2012-04-28T17:59:20.590Z","start":1335635960590,"end":1335636836747,"duration":876157},{"date":"2012-05-01T22:44:35.541Z","start":1335912275541,"end":1335912544088,"duration":268547},{"date":"2012-05-03T18:36:11.508Z","start":1336070171508,"end":1336070779297,"duration":607789},{"date":"2012-05-06T17:25:10.839Z","start":1336325110839,"end":1336325967662,"duration":856823},{"date":"2012-05-07T18:40:26.704Z","start":1336416026704,"end":1336416245105,"duration":218401},{"date":"2012-05-09T19:58:08.676Z","start":1336593488676,"end":1336594286487,"duration":797811},{"date":"2012-05-14T01:06:41Z.555","start":1336957601555,"end":1336958372495,"duration":770940},{"date":"2012-05-17T18:32:32.112Z","start":1337279552112,"end":1337280862378,"duration":1310266},{"date":"2012-05-19T15:51:38.383Z","start":1337442698383,"end":1337443213668,"duration":515285},{"date":"2012-05-23T19:46:34.808Z","start":1337802394808,"end":1337803010449,"duration":615641},{"date":"2012-05-26T16:34:33.892Z","start":1338050073892,"end":1338051064896,"duration":991004},{"date":"2012-05-29T18:36:06.789Z","start":1338316566789,"end":1338317191435,"duration":624646},{"date":"2012-05-31T19:55:05.191Z","start":1338494105191,"end":1338495235003,"duration":1129812},{"date":"2012-06-04T18:34:10.901Z","start":1338834850901,"end":1338835791022,"duration":940121},{"date":"2012-06-06T23:40:07.246Z","start":1339026007246,"end":1339026473103,"duration":465857},{"date":"2012-06-08T18:35:54.399Z","start":1339180554399,"end":1339181313501,"duration":759102},{"date":"2012-06-12T18:33:52.107Z","start":1339526032107,"end":1339527038649,"duration":1006542}];
 
-		var poops = JSON.parse(xhr.responseText);
+google.load("visualization", "1", {
+    packages: ["corechart"]
+});
+google.setOnLoadCallback(drawChart);
 
-		google.load("visualization", "1", {
-		    packages: ["corechart"]
-		});
-		google.setOnLoadCallback(drawChart);
-		
-		function drawChart() {
-			var i, data = [['Pooping Time', 'Time (minutes)']];
-		
-			for (i = 0; i < poops.length; i += 1) {
-				data.push([(new Date(poops[i].date)).toString(), poops[i].duration / 60000]);
-			}
-		
-		    data = google.visualization.arrayToDataTable(data);
-		
-		    var options = {
-		        title: 'Time Spent Pooping',
-		        legend: {
-		            position: 'none'
-		        },
-		    };
-		
-		    var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-		    chart.draw(data, options);
-		}
-	};
-	xhr.send();
+function drawChart() {
+	var i, data = [['Pooping Time', 'Time']];
 
-}());
+	for (i = 0; i < poops.length; i += 1) {
+		data.push([(new Date(poops[i].date)).toString(), poops[i].duration / 60000]);
+	}
+
+    data = google.visualization.arrayToDataTable(data);
+
+    var options = {
+        title: 'Time Spent Pooping',
+        legend: {
+            position: 'none'
+        },
+    };
+
+    var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
