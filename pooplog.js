@@ -6,9 +6,9 @@ google.load("visualization", "1", {
 google.setOnLoadCallback(drawChart);
 
 function drawChart() {
-	var data = [];
+	var i, data = [];
 
-	for (let i = 0; i < poops.length; i += 1) {
+	for (i = 0; i < poops.length; i += 1) {
 		data.push([poops[i].date, poops[i].duration]);
 	}
 
