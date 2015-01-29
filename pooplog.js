@@ -6,10 +6,10 @@ google.load("visualization", "1", {
 google.setOnLoadCallback(drawChart);
 
 function drawChart() {
-	var i, data = [];
+	var i, data = [['Pooping Time', 'Time']];
 
 	for (i = 0; i < poops.length; i += 1) {
-		data.push([poops[i].date, poops[i].duration]);
+		data.push([(new Date(poops[i].date)).toString(), poops[i].duration / 60000]);
 	}
 
     data = google.visualization.arrayToDataTable(data);
